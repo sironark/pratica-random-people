@@ -9,5 +9,6 @@ export async function getRandomDB(id:number) {
 }
 
 export async function getTotalPeopleDB() {
-    return db.query(`SELECT COUNT (*) FROM people;`)
+    const result = await db.query(`SELECT COUNT (*) FROM people;`)
+    return result.rows[0]
 }
