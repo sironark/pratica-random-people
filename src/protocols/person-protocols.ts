@@ -7,5 +7,5 @@ export type Person = {
   }
 
 export type Count = {
-  
+  count: string
 }

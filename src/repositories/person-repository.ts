@@ -1,5 +1,5 @@
-import db from "database/database-connection";
-import { Person } from "protocols/person-protocols";
+import db from "../database/database-connection";
+import { Count, Person } from "../protocols/person-protocols";
 
 export async function getRandomDB(id:number) {
     return db.query<Person>(`
@@ -9,6 +9,6 @@ export async function getRandomDB(id:number) {
 }
 
 export async function getTotalPeopleDB() {
-    const result = await db.query(`SELECT COUNT (*) FROM people;`)
+    const result = await db.query<Count>(`SELECT COUNT (*) FROM people;`)
     return result.rows[0]
 }
